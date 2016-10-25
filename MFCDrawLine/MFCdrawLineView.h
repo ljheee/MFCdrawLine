@@ -14,7 +14,8 @@ protected: // 仅从序列化创建
 // 特性
 public:
 	CMFCdrawLineDoc* GetDocument() const;
-
+	CPoint orgPoint;
+	CList<CPoint, CPoint> m_list;
 // 操作
 public:
 
@@ -40,6 +41,10 @@ protected:
 // 生成的消息映射函数
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnLButtonDown(UINT nFlags, CPoint point);
+	afx_msg void OnLButtonUp(UINT nFlags, CPoint point);
+	afx_msg void OnMouseMove(UINT nFlags, CPoint point);
 };
 
 #ifndef _DEBUG  // MFCdrawLineView.cpp 中的调试版本
